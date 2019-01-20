@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     // Array List to hold all three dice images
     ArrayList<ImageView> diceImageViews;
 
+    // Field to hold the score text
+    TextView scoreText;
+
     Random rand;
 
     @Override
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         // Link instances to widgets in activity view
         rollResult = (TextView) findViewById(R.id.rollResult);
         rollButton = (Button) findViewById(R.id.rollButton);
+        scoreText = (TextView) findViewById(R.id.scoreText);
 
         // Initialize the random number generator
         rand = new Random();
@@ -79,8 +83,6 @@ public class MainActivity extends AppCompatActivity {
         diceImageViews.add(die1Image);
         diceImageViews.add(die2Image);
         diceImageViews.add(die3Image);
-
-
 
         // Create Greeting
         Toast.makeText(getApplicationContext(),"Welcome to DiceOut!", Toast.LENGTH_SHORT).show();
