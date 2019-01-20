@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     // Field to hold the text result of rolls
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Field to hold game score
     int score;
+
+    Random rand;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +46,12 @@ public class MainActivity extends AppCompatActivity {
         // Set initial score
         score = 0;
 
+        // Link instances to widgets in activity view
         rollResult = (TextView) findViewById(R.id.rollResult);
         rollButton = (Button) findViewById(R.id.rollButton);
+
+        //Initialize the random number generator
+        rand = new Random();
 
         // Create Greeting
         Toast.makeText(getApplicationContext(),"Welcome to DiceOut!", Toast.LENGTH_SHORT).show();
@@ -51,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void rollDice(View v){
         rollResult.setText("Clicked!");
+        int num = rand.nextInt(6)+1;
+        String randomValue = "Number generated: " + num;
+        Toast.makeText(getApplicationContext(),randomValue,Toast.LENGTH_SHORT).show();
     }
 
     @Override
