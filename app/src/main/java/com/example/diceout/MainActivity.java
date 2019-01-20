@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Array List to hold all three dice values
     ArrayList<Integer> dice;
+
+    // Array List to hold all three dice images
+    ArrayList<ImageView> diceImageViews;
 
     Random rand;
 
@@ -63,6 +67,16 @@ public class MainActivity extends AppCompatActivity {
 
         // Create ArrayList container for the new dice values
         dice = new ArrayList<Integer>();
+
+        ImageView die1Image = (ImageView) findViewById(R.id.die1Image);
+        ImageView die2Image = (ImageView) findViewById(R.id.die2Image);
+        ImageView die3Image = (ImageView) findViewById(R.id.die3Image);
+
+        diceImageViews = new ArrayList<ImageView>();
+        diceImageViews.add(die1Image);
+        diceImageViews.add(die2Image);
+        diceImageViews.add(die3Image);
+
 
         // Create Greeting
         Toast.makeText(getApplicationContext(),"Welcome to DiceOut!", Toast.LENGTH_SHORT).show();
